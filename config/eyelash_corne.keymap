@@ -85,7 +85,7 @@
                                       &kp TAB         &lt 1 SPACE  &kp LEFT_SHIFT                                                                &kp LEFT_SHIFT  &lt 2 ENTER  &mo 3
             >;
 
-            sensor-bindings = <&none>;
+            sensor-bindings = <&new_behavior>;
         };
 
         lower_layer {
