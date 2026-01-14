@@ -54,7 +54,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp DOWN>;
 
-            tap-ms = <1>;
+            tap-ms = <5>;
         };
     };
 
