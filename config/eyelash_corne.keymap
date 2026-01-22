@@ -105,7 +105,7 @@
             bindings = <
 &trans  &none           &none                          &kp LEFT_BRACKET                &kp RIGHT_BRACKET      &kp LCTRL                          &trans          &kp GRAVE      &kp ASTERISK  &kp QUESTION    &kp DOLLAR  &none            &trans
 &trans  &kp LEFT_BRACE  &mt LEFT_WIN LEFT_PARENTHESIS  &mt LEFT_ALT RIGHT_PARENTHESIS  &mt LCTRL RIGHT_BRACE  &kp PLUS                   &trans  &trans  &trans  &kp AMPERSAND  &kp MINUS     &kp UNDERSCORE  &kp EQUAL   &kp EXCLAMATION  &trans
-&trans  &none           &none                          &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE            &trans          &kp PERCENT    &kp PIPE      &kp HASH        &kp TILDE   &kp PIPE         &trans
+&trans  &none           &none                          &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE            &trans          &kp PERCENT    &kp PIPE      &kp HASH        &kp TILDE   &kp BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans        &trans
             >;
 
