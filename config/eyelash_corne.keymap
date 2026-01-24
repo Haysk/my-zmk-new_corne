@@ -79,9 +79,9 @@
         default_layer {
             display-name = "Graphite";
             bindings = <
-&kp BACKSPACE  &kp B  &kp L           &kp D           &kp W        &kp Z                                        &mmv MOVE_UP                     &kp SQT         &kp F        &kp O           &kp U           &kp J      &kp DEL
-&kp ESC        &kp N  &mt LEFT_WIN R  &mt LEFT_ALT T  &mt LCTRL S  &kp G                        &mmv MOVE_LEFT  &mkp RCLK       &mmv MOVE_RIGHT  &kp Y           &mt LCTRL H  &mt LEFT_ALT A  &mt LEFT_WIN E  &kp I      &kp COLON
-&kp K_APP      &kp X  &kp M           &kp C           &kp V        &kp Q           &mkp LCLK                    &mmv MOVE_DOWN                   &kp K           &kp P        &kp PERIOD      &kp COMMA       &kp SLASH  &kp SEMICOLON
+&kp BACKSPACE  &kp B  &kp L           &kp D           &kp W        &kp Z                                        &msc SCRL_UP                     &kp SQT         &kp F        &kp O           &kp U           &kp J      &kp DEL
+&kp ESC        &kp N  &mt LEFT_WIN R  &mt LEFT_ALT T  &mt LCTRL S  &kp G                        &msc SCRL_LEFT  &mkp RCLK       &msc SCRL_RIGHT  &kp Y           &mt LCTRL H  &mt LEFT_ALT A  &mt LEFT_WIN E  &kp I      &kp COLON
+&kp K_APP      &kp X  &kp M           &kp C           &kp V        &kp Q           &mkp LCLK                    &msc SCRL_DOWN                   &kp K           &kp P        &kp PERIOD      &kp COMMA       &kp SLASH  &kp SEMICOLON
                                       &kp TAB         &lt 1 SPACE  &kp LEFT_SHIFT                                                                &kp LEFT_SHIFT  &lt 2 ENTER  &mo 3
             >;
 
@@ -91,10 +91,10 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp ASTERISK  &kp N7        &kp N8        &kp N9        &kp MINUS                            &msc SCRL_UP                     &trans  &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans     &trans
-&trans  &kp N0        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS             &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans  &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &kp PERIOD    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp COMMA  &trans                    &msc SCRL_DOWN                   &trans  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
-                                    &trans        &trans        &trans                                                                &trans  &trans     &trans
+&trans  &kp ASTERISK  &kp N7                  &kp N8           &kp N9              &kp MINUS                            &mmv MOVE_UP                     &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans     &trans
+&trans  &kp N0        &mt LEFT_META NUMBER_4  &mt LEFT_ALT N5  &mt LCTRL NUMBER_6  &kp PLUS             &mmv MOVE_LEFT  &trans          &mmv MOVE_RIGHT  &trans     &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &kp PERIOD    &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3        &kp COMMA  &trans                    &mmv MOVE_DOWN                   &mkp RCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+                                              &trans           &trans              &trans                                                                &mkp LCLK  &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DEC>;
@@ -103,10 +103,10 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &none           &none                          &kp LEFT_BRACKET                &kp RIGHT_BRACKET      &kp LCTRL                          &trans          &kp GRAVE      &kp ASTERISK  &kp QUESTION    &kp DOLLAR  &none            &trans
-&trans  &kp LEFT_BRACE  &mt LEFT_WIN LEFT_PARENTHESIS  &mt LEFT_ALT RIGHT_PARENTHESIS  &mt LCTRL RIGHT_BRACE  &kp PLUS                   &trans  &trans  &trans  &kp AMPERSAND  &kp MINUS     &kp UNDERSCORE  &kp EQUAL   &kp EXCLAMATION  &trans
-&trans  &none           &none                          &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE            &trans          &kp PERCENT    &kp PIPE      &kp HASH        &kp TILDE   &kp BACKSLASH    &trans
-                                                       &trans                          &trans                 &trans                                             &trans         &trans        &trans
+&trans  &none           &none                          &kp LEFT_BRACKET                &kp RIGHT_BRACKET      &kp LCTRL                          &trans          &kp GRAVE      &kp ASTERISK     &kp QUESTION             &kp DOLLAR           &none            &trans
+&trans  &kp LEFT_BRACE  &mt LEFT_WIN LEFT_PARENTHESIS  &mt LEFT_ALT RIGHT_PARENTHESIS  &mt LCTRL RIGHT_BRACE  &kp PLUS                   &trans  &trans  &trans  &kp AMPERSAND  &mt LCTRL MINUS  &mt LEFT_ALT UNDERSCORE  &mt LEFT_META EQUAL  &kp EXCLAMATION  &trans
+&trans  &none           &none                          &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE            &trans          &kp PERCENT    &kp PIPE         &kp HASH                 &kp TILDE            &kp BACKSLASH    &trans
+                                                       &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
