@@ -89,10 +89,10 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&none  &kp ASTERISK  &kp N7                  &kp N8           &kp N9              &kp MINUS                           &mmv MOVE_UP                     &none      &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &none      &none
-&mo 4  &kp N0        &mt LEFT_META NUMBER_4  &mt LEFT_ALT N5  &mt LCTRL NUMBER_6  &kp PLUS            &mmv MOVE_LEFT  &none           &mmv MOVE_RIGHT  &mkp RCLK  &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &none
-&none  &kp PERIOD    &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3        &kp COMMA  &none                    &mmv MOVE_DOWN                   &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END    &none
-                                             &none            &none               &none                                                                &none      &none      &none
+&trans  &kp ASTERISK  &kp N7                  &kp N8           &kp N9              &kp MINUS                            &mmv MOVE_UP                     &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans     &trans
+&mo 4   &kp N0        &mt LEFT_META NUMBER_4  &mt LEFT_ALT N5  &mt LCTRL NUMBER_6  &kp PLUS             &mmv MOVE_LEFT  &trans          &mmv MOVE_RIGHT  &mkp RCLK  &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &kp PERIOD    &kp NUMBER_1            &kp NUMBER_2     &kp NUMBER_3        &kp COMMA  &trans                    &mmv MOVE_DOWN                   &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+                                              &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -101,10 +101,10 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&none  &none           &none                          &kp LEFT_BRACKET                &kp RIGHT_BRACKET      &kp CARET                         &none         &kp GRAVE      &kp ASTERISK     &kp QUESTION             &kp DOLLAR           &none            &none
-&none  &kp LEFT_BRACE  &mt LEFT_WIN LEFT_PARENTHESIS  &mt LEFT_ALT RIGHT_PARENTHESIS  &mt LCTRL RIGHT_BRACE  &kp PLUS                   &none  &none  &none  &kp AMPERSAND  &mt LCTRL MINUS  &mt LEFT_ALT UNDERSCORE  &mt LEFT_META EQUAL  &kp EXCLAMATION  &none
-&none  &none           &none                          &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE           &none         &kp PERCENT    &kp PIPE         &kp HASH                 &kp TILDE            &kp BACKSLASH    &none
-                                                      &none                           &none                  &none                                           &none          &none            &none
+&trans  &trans          &trans                         &kp LEFT_BRACKET                &kp RIGHT_BRACKET      &kp CARET                          &trans          &kp GRAVE      &kp ASTERISK     &kp QUESTION             &kp DOLLAR           &trans           &trans
+&trans  &kp LEFT_BRACE  &mt LEFT_WIN LEFT_PARENTHESIS  &mt LEFT_ALT RIGHT_PARENTHESIS  &mt LCTRL RIGHT_BRACE  &kp PLUS                   &trans  &trans  &trans  &kp AMPERSAND  &mt LCTRL MINUS  &mt LEFT_ALT UNDERSCORE  &mt LEFT_META EQUAL  &kp EXCLAMATION  &trans
+&trans  &trans          &trans                         &kp LESS_THAN                   &kp GREATER_THAN       &kp AT_SIGN  &kp K_MUTE            &trans          &kp PERCENT    &kp PIPE         &kp HASH                 &kp TILDE            &kp BACKSLASH    &trans
+                                                       &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
