@@ -11,10 +11,6 @@
 
 #include <locale/keys_fr.h>
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
-
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
-
 &msc {
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <100>;       // 300
@@ -29,12 +25,6 @@
 
 &soft_off { hold-time-ms = <2000>; };
 
-&mt {
-    tapping-term-ms = <250>;
-    require-prior-idle-ms = <200>;
-    flavor = "balanced";
-};
-
 &lt {
     tapping-term-ms = <250>;
     flavor = "balanced";
@@ -47,6 +37,34 @@
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+
+        // Positional home-row mods: the modifier only fires when a key on the
+        // OPPOSITE hand (or a thumb) is pressed, killing same-hand misfires.
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Home Row Mod Left";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 42 43 44 45 46 47>;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Home Row Mod Right";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 44 45 46 47>;
+            hold-trigger-on-release;
         };
     };
 
@@ -80,7 +98,7 @@
             display-name = "Graphite";
             bindings = <
 &kp BACKSPACE  &kp FR_B  &kp FR_L           &kp FR_D           &kp FR_W        &kp FR_Z                                        &msc SCRL_UP                     &kp FR_SQT      &kp FR_F        &kp FR_O           &kp FR_U           &kp FR_J      &kp DEL
-&kp ESC        &kp FR_N  &mt LEFT_WIN FR_R  &mt LEFT_ALT FR_T  &mt LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &mkp RCLK       &msc SCRL_RIGHT  &kp FR_Y        &mt LCTRL FR_H  &mt LEFT_ALT FR_A  &mt LEFT_WIN FR_E  &kp FR_I  &kp FR_COLON
+&kp ESC        &kp FR_N  &hml LEFT_WIN FR_R  &hml LEFT_ALT FR_T  &hml LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &mkp RCLK       &msc SCRL_RIGHT  &kp FR_Y        &hmr LCTRL FR_H  &hmr LEFT_ALT FR_A  &hmr LEFT_WIN FR_E  &kp FR_I  &kp FR_COLON
 &kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &mkp LCLK                    &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp FR_SLASH  &kp FR_SEMICOLON
                                       &kp TAB         &lt 1 SPACE  &kp LEFT_SHIFT                                                                &kp LEFT_SHIFT  &lt 2 ENTER  &mo 3
             >;
@@ -92,7 +110,7 @@
             display-name = "NUMBER";
             bindings = <
 &trans  &kp FR_ASTERISK  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp FR_MINUS                         &mmv MOVE_UP                     &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
-&mo 4   &kp FR_N0        &mt LEFT_META FR_N4     &mt LEFT_ALT FR_N5  &mt LCTRL FR_N6  &kp FR_PLUS          &mmv MOVE_LEFT  &trans          &mmv MOVE_RIGHT  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
+&mo 4   &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &mmv MOVE_LEFT  &trans          &mmv MOVE_RIGHT  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
 &trans  &kp FR_PERIOD    &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &trans                 &mmv MOVE_DOWN                   &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
@@ -104,7 +122,7 @@
             display-name = "SYMBOL";
             bindings = <
 &trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &trans          &kp FR_GRAVE      &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
-&trans  &kp FR_LEFT_BRACE  &mt LEFT_WIN FR_LEFT_PARENTHESIS  &mt LEFT_ALT FR_RIGHT_PARENTHESIS  &mt LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &trans  &trans  &trans  &kp FR_AMPERSAND  &mt LCTRL FR_MINUS  &mt LEFT_ALT FR_UNDERSCORE  &mt LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
+&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &trans  &trans  &trans  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
 &trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp K_MUTE         &trans          &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
