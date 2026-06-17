@@ -91,7 +91,7 @@
             bindings = <
 &kp BACKSPACE  &kp FR_B  &kp FR_L           &kp FR_D           &kp FR_W        &kp FR_Z                                        &msc SCRL_UP                     &kp FR_SQT      &kp FR_F        &kp FR_O           &kp FR_U           &kp FR_J      &kp DEL
 &kp ESC        &kp FR_N  &hml LEFT_WIN FR_R  &hml LEFT_ALT FR_T  &hml LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &kp LC(FR_L)    &msc SCRL_RIGHT  &kp FR_Y        &hmr LCTRL FR_H  &hmr LEFT_ALT FR_A  &hmr LEFT_WIN FR_E  &kp FR_I  &kp FR_COLON
-&kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp FR_SLASH  &kp FR_SEMICOLON
+&kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp KP_DIVIDE  &kp FR_SEMICOLON
                                       &lt 4 TAB       &lt 1 SPACE  &kp LEFT_SHIFT                                                                &kp LEFT_SHIFT  &lt 2 ENTER  &mo 3
             >;
 
