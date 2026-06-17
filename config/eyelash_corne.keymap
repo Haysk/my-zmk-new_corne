@@ -74,14 +74,6 @@
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
     };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <100>;
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -109,25 +101,25 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp FR_ASTERISK  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp FR_MINUS                         &mmv MOVE_UP                     &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
-&mo 4   &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &mmv MOVE_LEFT  &trans          &mmv MOVE_RIGHT  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
-&trans  &kp FR_PERIOD    &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &trans                 &mmv MOVE_DOWN                   &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
+&trans  &kp FR_ASTERISK  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp FR_MINUS                         &kp LG(TAB)                      &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
+&mo 4   &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &kp LG(LC(LEFT))  &trans          &kp LG(LC(RIGHT))  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
+&trans  &kp FR_PERIOD    &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &trans                 &kp LG(D)                        &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(FR_EQUAL) LC(FR_MINUS)>;
         };
 
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &trans          &kp FR_GRAVE      &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
-&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &trans  &trans  &trans  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
-&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp K_MUTE         &trans          &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
+&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_GRAVE      &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
+&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &kp LG(LEFT)  &trans  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
+&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp K_MUTE         &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp LC(FR_Y) LC(FR_Z)>;
         };
 
         layer_3 {
@@ -139,7 +131,7 @@
                          &trans  &trans  &trans                                                         &trans           &trans           &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&rgb_encoder>;
         };
 
         layer_4 {
