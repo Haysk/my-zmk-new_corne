@@ -72,7 +72,7 @@ layers:
   - {t: '$$mdi:arrow-left-bold$$', s: Desk}
   - +Desk
   - {t: '$$mdi:arrow-right-bold$$', s: Desk}
-  - $$mdi:mouse$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-up-bold$$
@@ -86,7 +86,7 @@ layers:
   - ','
   - Alt+Sft+0
   - $$mdi:monitor$$
-  - $$mdi:mouse$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - Home
   - PgDn
   - PG UP
