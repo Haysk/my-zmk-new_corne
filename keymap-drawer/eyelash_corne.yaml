@@ -43,7 +43,7 @@ layers:
   - ','
   - /
   - ;
-  - {t: '$$mdi:keyboard-tab$$', h: NAV/FR}
+  - {t: '$$mdi:keyboard-tab$$', h: ACCENTS}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-shift$$
@@ -196,7 +196,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  NAV/FR:
+  ACCENTS:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -220,7 +220,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - h
+  - {t: '$$mdi:transfer$$', type: trans}
   - à
   - é
   - è
