@@ -2,47 +2,47 @@ layout: {zmk_keyboard: eyelash_corne}
 layers:
   Graphite:
   - {t: '$$mdi:backspace$$', type: backspace}
-  - FR B
-  - FR L
-  - FR D
-  - FR W
-  - FR Z
+  - b
+  - l
+  - d
+  - w
+  - z
   - $$mdi:pan-up$$
-  - FR SQT
-  - FR F
-  - FR O
-  - FR U
-  - FR J
+  - ''''
+  - f
+  - o
+  - u
+  - j
   - $$mdi:backspace-reverse-outline$$
   - $$mdi:keyboard-esc$$
-  - FR N
-  - {t: FR R, h: LEFT WIN}
-  - {t: FR T, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: FR S, h: '$$mdi:apple-keyboard-control$$'}
-  - FR G
+  - n
+  - {t: r, h: '$$mdi:microsoft-windows$$'}
+  - {t: t, h: Alt}
+  - {t: s, h: Ctrl}
+  - g
   - $$mdi:pan-left$$
-  - Ctl+FR L
+  - $$mdi:web$$
   - $$mdi:pan-right$$
-  - FR Y
-  - {t: FR H, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: FR A, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: FR E, h: LEFT WIN}
-  - FR I
-  - FR COLON
-  - APP
-  - FR X
-  - FR M
-  - FR C
-  - FR V
-  - FR Q
-  - MUTE
+  - y
+  - {t: h, h: Ctrl}
+  - {t: a, h: Alt}
+  - {t: e, h: '$$mdi:microsoft-windows$$'}
+  - i
+  - ':'
+  - $$mdi:menu$$
+  - x
+  - m
+  - c
+  - v
+  - q
+  - $$mdi:volume-off$$
   - $$mdi:pan-down$$
-  - FR K
-  - FR P
-  - FR PERIOD
-  - FR COMMA
-  - FR SLASH
-  - FR SEMICOLON
+  - k
+  - p
+  - .
+  - ','
+  - /
+  - ;
   - {t: '$$mdi:keyboard-tab$$', h: NAV/FR}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - $$mdi:apple-keyboard-shift$$
@@ -51,46 +51,46 @@ layers:
   - Fn
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP MULTIPLY
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP MINUS
-  - Gui+$$mdi:keyboard-tab$$
+  - x
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - Tasks
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LEFT WIN
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - KP 0
-  - {t: KP 4, h: LEFT META}
-  - {t: KP 5, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: KP 6, h: '$$mdi:apple-keyboard-control$$'}
-  - KP PLUS
-  - Gui+Ctl+$$mdi:arrow-left-bold$$
-  - Gui+Ctl+D
-  - Gui+Ctl+$$mdi:arrow-right-bold$$
-  - $$mdi:mouse-right-click-outline$$
-  - FR H
-  - FR J
-  - FR K
-  - FR L
+  - Ctrl
+  - Alt
+  - $$mdi:microsoft-windows$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP DOT
-  - KP 1
-  - KP 2
-  - KP 3
-  - FR COMMA
-  - Ctl+FR 0
-  - {t: D, h: '$$mdi:apple-keyboard-command$$'}
-  - $$mdi:mouse-left-click-outline$$
-  - HOME
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '0'
+  - {t: '4', h: LEFT META}
+  - {t: '5', h: Alt}
+  - {t: '6', h: Ctrl}
+  - +
+  - {t: '$$mdi:arrow-left-bold$$', s: Desk}
+  - +Desk
+  - {t: '$$mdi:arrow-right-bold$$', s: Desk}
+  - $$mdi:mouse$$
+  - h
+  - j
+  - k
+  - l
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - ','
+  - 100%
+  - $$mdi:monitor$$
+  - $$mdi:mouse$$
+  - Home
   - PgDn
   - PG UP
-  - END
+  - End
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
@@ -102,44 +102,44 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR LEFT BRACKET
-  - FR RIGHT BRACKET
-  - FR CARET
-  - Gui+$$mdi:arrow-up-bold$$
-  - FR GRAVE
-  - FR ASTERISK
-  - FR QUESTION
-  - FR DOLLAR
+  - '['
+  - ']'
+  - ^
+  - Max
+  - '`'
+  - '*'
+  - '?'
+  - $
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR LEFT BRACE
-  - {t: FR LEFT PARENTHESIS, h: LEFT WIN}
-  - {t: FR RIGHT PARENTHESIS, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: FR RIGHT BRACE, h: '$$mdi:apple-keyboard-control$$'}
-  - FR PLUS
-  - Gui+$$mdi:arrow-left-bold$$
-  - Gui+Sft+S
-  - Gui+$$mdi:arrow-right-bold$$
-  - FR AMPERSAND
-  - {t: FR MINUS, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: FR UNDERSCORE, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: FR EQUAL, h: LEFT META}
-  - FR EXCLAMATION
+  - '{'
+  - {t: (, h: '$$mdi:microsoft-windows$$'}
+  - {t: ), h: Alt}
+  - {t: '}', h: Ctrl}
+  - +
+  - {t: '$$mdi:arrow-left-bold$$', s: Win}
+  - $$mdi:camera$$
+  - {t: '$$mdi:arrow-right-bold$$', s: Win}
+  - '&'
+  - {t: '-', h: Ctrl}
+  - {t: _, h: Alt}
+  - {t: '=', h: LEFT META}
+  - '!'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR LESS THAN
-  - FR GREATER THAN
-  - FR AT SIGN
-  - Gui+FR V
-  - Gui+$$mdi:arrow-down-bold$$
-  - FR PERCENT
-  - FR PIPE
-  - FR HASH
-  - FR TILDE
-  - FR BACKSLASH
+  - <
+  - '>'
+  - '@'
+  - $$mdi:clipboard-text$$
+  - Min
+  - '%'
+  - '|'
+  - '#'
+  - '~'
+  - \\
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -167,13 +167,13 @@ layers:
   - F5
   - F6
   - {t: '$$mdi:transfer$$', type: trans}
-  - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:arrow-left-bold$$'}
   - $$mdi:bluetooth-off$$
-  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:arrow-right-bold$$'}
   - RGB EFR
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LEFT WIN
+  - Ctrl
+  - Alt
+  - $$mdi:microsoft-windows$$
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB EFF
   - {t: '$$mdi:transfer$$', type: trans}
@@ -204,11 +204,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR E ACUTE
-  - FR E GRAVE
-  - FR A GRAVE
-  - FR U GRAVE
-  - FR C CEDILLA
+  - é
+  - è
+  - à
+  - ù
+  - ç
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -247,4 +247,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [0, 12, 44, 45]
-  k: '&soft_off'
+  k: $$mdi:power$$
+  a: top
+  o: 0.5
