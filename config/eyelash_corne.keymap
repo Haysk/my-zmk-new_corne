@@ -113,8 +113,8 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_GRAVE      &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
-&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
+&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_GRAVE      &kp KP_MULTIPLY     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
+&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp KP_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL KP_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META KP_EQUAL  &kp FR_EXCLAMATION  &trans
 &trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
