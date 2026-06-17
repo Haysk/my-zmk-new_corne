@@ -66,37 +66,41 @@ parse_config:
       shifted: ''
     # Mouse
     "&mkp LCLK":
-      tap: $$mdi:mouse-left-click-outline$$
+      tap: $$mdi:mouse$$
     "&mkp RCLK":
-      tap: $$mdi:mouse-right-click-outline$$
+      tap: $$mdi:mouse$$
     # Power
     "&soft_off":
-      tap: $$mdi:power-sleep$$
+      tap: $$mdi:power$$
     # NUMBER stick — virtual desktops
     "&kp LG(TAB)":
-      tap: $$mdi:view-dashboard-outline$$
+      tap: Tasks
     "&kp LG(LC(LEFT))":
-      tap: $$mdi:arrow-left-bold-box-outline$$
+      tap: $$mdi:arrow-left-bold$$
+      shifted: Desk
     "&kp LG(LC(RIGHT))":
-      tap: $$mdi:arrow-right-bold-box-outline$$
+      tap: $$mdi:arrow-right-bold$$
+      shifted: Desk
     "&kp LG(D)":
-      tap: $$mdi:monitor-clean$$
+      tap: $$mdi:monitor$$
     "&kp LG(LC(D))":
-      tap: $$mdi:plus-box-outline$$
+      tap: +Desk
     # SYMBOL stick — window snapping
     "&kp LG(UP)":
-      tap: $$mdi:arrow-expand-up$$
+      tap: Max
     "&kp LG(LEFT)":
-      tap: $$mdi:arrow-expand-left$$
+      tap: $$mdi:arrow-left-bold$$
+      shifted: Win
     "&kp LG(RIGHT)":
-      tap: $$mdi:arrow-expand-right$$
+      tap: $$mdi:arrow-right-bold$$
+      shifted: Win
     "&kp LG(DOWN)":
-      tap: $$mdi:arrow-collapse-down$$
+      tap: Min
     "&kp LG(LS(S))":
-      tap: $$mdi:camera-outline$$
+      tap: $$mdi:camera$$
     # SYMBOL encoder click — clipboard history
     "&kp LG(FR_V)":
-      tap: $$mdi:clipboard-multiple-outline$$
+      tap: $$mdi:clipboard-text$$
     # Graphite stick click — address bar
     "&kp LC(FR_L)":
       tap: $$mdi:web$$
@@ -106,10 +110,10 @@ parse_config:
     # Bluetooth
     "&bt BT_PRV":
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:arrow-left$$
+      hold: $$mdi:arrow-left-bold$$
     "&bt BT_NXT":
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:arrow-right$$
+      hold: $$mdi:arrow-right-bold$$
     "&bt BT_CLR":
       tap: $$mdi:bluetooth-off$$
     # System
@@ -210,7 +214,7 @@ parse_config:
     KP_N7: '7'
     KP_N8: '8'
     KP_N9: '9'
-    KP_MULTIPLY: "×"
+    KP_MULTIPLY: "x"
     KP_MINUS: "-"
     KP_PLUS: "+"
     KP_DOT: "."
@@ -292,9 +296,9 @@ parse_config:
     F11: F11
     F12: F12
     # RGB
-    RGB_TOG: $$mdi:led-strip$$
-    RGB_ON: $$mdi:led-on$$
-    RGB_OFF: $$mdi:led-off$$
+    RGB_TOG: $$mdi:lightbulb-on-outline$$
+    RGB_ON: RGB+
+    RGB_OFF: RGB-
     RGB_BRI: $$mdi:brightness-5$$
     RGB_BRD: $$mdi:brightness-4$$
     RGB_SAI: Sat+
@@ -306,7 +310,7 @@ parse_config:
     RGB_EFF: $$mdi:palette$$
     RGB_EFR: $$mdi:palette$$
     # Screenshot
-    PSCRN: $$mdi:camera-outline$$
+    PSCRN: $$mdi:camera$$
 
   zmk_combos:
     softoff:
