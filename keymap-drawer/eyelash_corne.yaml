@@ -46,7 +46,7 @@ layers:
   - {t: '$$mdi:keyboard-tab$$', h: ACCENTS}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-shift$$
+  - '&td0'
   - {t: '$$mdi:keyboard-return$$', h: SYMBOL}
   - Fn
   NUMBER:
@@ -65,7 +65,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '0'
-  - {t: '4', h: LEFT META}
+  - {t: '4', h: '$$mdi:microsoft-windows$$'}
   - {t: '5', h: Alt}
   - {t: '6', h: Ctrl}
   - +
@@ -124,7 +124,7 @@ layers:
   - '&'
   - {t: '-', h: Ctrl}
   - {t: _, h: Alt}
-  - {t: '=', h: LEFT META}
+  - {t: '=', h: '$$mdi:microsoft-windows$$'}
   - '!'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
