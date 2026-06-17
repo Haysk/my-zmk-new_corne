@@ -107,7 +107,7 @@
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(FR_EQUAL) LC(FR_MINUS)>;
+            sensor-bindings = <&inc_dec_kp LC(KP_PLUS) LC(KP_MINUS)>;
         };
 
         raise_layer {
