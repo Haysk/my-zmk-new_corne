@@ -91,7 +91,7 @@
             bindings = <
 &kp BACKSPACE  &kp FR_B  &kp FR_L           &kp FR_D           &kp FR_W        &kp FR_Z                                        &msc SCRL_UP                     &kp FR_SQT      &kp FR_F        &kp FR_O           &kp FR_U           &kp FR_J      &kp DEL
 &kp ESC        &kp FR_N  &hml LEFT_WIN FR_R  &hml LEFT_ALT FR_T  &hml LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &kp LC(FR_L)    &msc SCRL_RIGHT  &kp FR_Y        &hmr LCTRL FR_H  &hmr LEFT_ALT FR_A  &hmr LEFT_WIN FR_E  &kp FR_I  &kp FR_COLON
-&kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp KP_DIVIDE  &kp FR_SEMICOLON
+&kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp FR_SLASH  &kp FR_SEMICOLON
                                       &lt 4 TAB       &lt 1 SPACE  &kp LEFT_SHIFT                                                                &kp LEFT_SHIFT  &lt 2 ENTER  &mo 3
             >;
 
@@ -101,20 +101,20 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp KP_MULTIPLY  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp KP_MINUS                         &kp LG(TAB)                      &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
-&trans  &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp KP_PLUS          &kp LG(LC(LEFT))  &kp LG(LC(D))   &kp LG(LC(RIGHT))  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
-&trans  &kp KP_DOT       &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &kp LC(FR_N0)          &kp LG(D)                        &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
+&trans  &kp FR_ASTERISK  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp FR_MINUS                         &kp LG(TAB)                      &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
+&trans  &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &kp LG(LC(LEFT))  &kp LG(LC(D))   &kp LG(LC(RIGHT))  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
+&trans  &kp FR_PERIOD    &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &kp LA(LS(FR_N0))          &kp LG(D)                        &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(KP_PLUS) LC(KP_MINUS)>;
+            sensor-bindings = <&inc_dec_kp LA(LS(FR_EQUAL)) LA(LS(FR_MINUS))>;
         };
 
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_GRAVE      &kp KP_MULTIPLY     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
-&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp KP_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL KP_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META KP_EQUAL  &kp FR_EXCLAMATION  &trans
+&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_GRAVE      &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &trans              &trans
+&trans  &kp FR_LEFT_BRACE  &hml LEFT_WIN FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_META FR_EQUAL  &kp FR_EXCLAMATION  &trans
 &trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
