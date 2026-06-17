@@ -247,6 +247,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [0, 12, 44, 45]
-  k: '&soft_off_macro'
+  k: $$mdi:power$$
   a: top
   o: 0.5
