@@ -21,7 +21,7 @@ layers:
   - {t: FR S, h: '$$mdi:apple-keyboard-control$$'}
   - FR G
   - $$mdi:pan-left$$
-  - $$mdi:mouse-right-click-outline$$
+  - Ctl+FR L
   - $$mdi:pan-right$$
   - FR Y
   - {t: FR H, h: '$$mdi:apple-keyboard-control$$'}
