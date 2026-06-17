@@ -35,7 +35,7 @@ layers:
   - FR C
   - FR V
   - FR Q
-  - $$mdi:mouse-left-click-outline$$
+  - MUTE
   - $$mdi:pan-down$$
   - FR K
   - FR P
@@ -70,7 +70,7 @@ layers:
   - {t: FR 6, h: '$$mdi:apple-keyboard-control$$'}
   - FR PLUS
   - Gui+Ctl+$$mdi:arrow-left-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+Ctl+D
   - Gui+Ctl+$$mdi:arrow-right-bold$$
   - $$mdi:mouse-right-click-outline$$
   - FR H
@@ -84,7 +84,7 @@ layers:
   - FR 2
   - FR 3
   - FR COMMA
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+FR 0
   - {t: D, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:mouse-left-click-outline$$
   - HOME
@@ -119,7 +119,7 @@ layers:
   - {t: FR RIGHT BRACE, h: '$$mdi:apple-keyboard-control$$'}
   - FR PLUS
   - Gui+$$mdi:arrow-left-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+Sft+S
   - Gui+$$mdi:arrow-right-bold$$
   - FR AMPERSAND
   - {t: FR MINUS, h: '$$mdi:apple-keyboard-control$$'}
@@ -133,7 +133,7 @@ layers:
   - FR LESS THAN
   - FR GREATER THAN
   - FR AT SIGN
-  - MUTE
+  - Gui+FR V
   - Gui+$$mdi:arrow-down-bold$$
   - FR PERCENT
   - FR PIPE
@@ -182,7 +182,7 @@ layers:
   - F2
   - F3
   - {t: '$$mdi:transfer$$', type: trans}
-  - MUTE
+  - RGB TOG
   - RGB OFF
   - RGB SPI
   - RGB SPD
