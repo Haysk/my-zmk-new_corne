@@ -137,9 +137,9 @@
         layer_4 {
             display-name = "NAV/FR";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &kp FR_E_ACUTE  &kp FR_E_GRAVE  &kp FR_A_GRAVE  &kp FR_U_GRAVE  &kp FR_C_CEDILLA  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &kp FR_H        &kp FR_J        &kp FR_K       &kp FR_L        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP    &kp END         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &trans          &kp FR_C_CEDILLA  &kp FR_U_GRAVE  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &kp FR_H        &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_E_GRAVE  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans          &trans          &trans          &trans
                         &trans  &trans  &trans                                    &trans       &trans       &trans
             >;
         };
