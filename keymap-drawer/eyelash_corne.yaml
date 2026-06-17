@@ -107,7 +107,7 @@ layers:
   - ^
   - Max
   - '`'
-  - '*'
+  - x
   - '?'
   - $
   - {t: '$$mdi:transfer$$', type: trans}
