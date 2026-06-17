@@ -56,7 +56,7 @@ layers:
   - FR 8
   - FR 9
   - FR MINUS
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - Gui+$$mdi:keyboard-tab$$
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -69,9 +69,9 @@ layers:
   - {t: FR 5, h: '$$mdi:apple-keyboard-option$$'}
   - {t: FR 6, h: '$$mdi:apple-keyboard-control$$'}
   - FR PLUS
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - Gui+Ctl+$$mdi:arrow-left-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - Gui+Ctl+$$mdi:arrow-right-bold$$
   - $$mdi:mouse-right-click-outline$$
   - FR H
   - FR J
@@ -85,7 +85,7 @@ layers:
   - FR 3
   - FR COMMA
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:mouse-left-click-outline$$
   - HOME
   - PgDn
@@ -105,7 +105,7 @@ layers:
   - FR LEFT BRACKET
   - FR RIGHT BRACKET
   - FR CARET
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-up-bold$$
   - FR GRAVE
   - FR ASTERISK
   - FR QUESTION
@@ -118,9 +118,9 @@ layers:
   - {t: FR RIGHT PARENTHESIS, h: '$$mdi:apple-keyboard-option$$'}
   - {t: FR RIGHT BRACE, h: '$$mdi:apple-keyboard-control$$'}
   - FR PLUS
+  - Gui+$$mdi:arrow-left-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-right-bold$$
   - FR AMPERSAND
   - {t: FR MINUS, h: '$$mdi:apple-keyboard-control$$'}
   - {t: FR UNDERSCORE, h: '$$mdi:apple-keyboard-option$$'}
@@ -134,7 +134,7 @@ layers:
   - FR GREATER THAN
   - FR AT SIGN
   - MUTE
-  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:arrow-down-bold$$
   - FR PERCENT
   - FR PIPE
   - FR HASH
