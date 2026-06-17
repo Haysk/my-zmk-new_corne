@@ -51,7 +51,7 @@ layers:
   - Fn
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
-  - x
+  - '*'
   - '7'
   - '8'
   - '9'
@@ -84,7 +84,7 @@ layers:
   - '2'
   - '3'
   - ','
-  - 100%
+  - Alt+Sft+0
   - $$mdi:monitor$$
   - $$mdi:mouse$$
   - Home
@@ -107,7 +107,7 @@ layers:
   - ^
   - Max
   - '`'
-  - x
+  - '*'
   - '?'
   - $
   - {t: '$$mdi:transfer$$', type: trans}
