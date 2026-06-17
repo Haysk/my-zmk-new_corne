@@ -51,11 +51,11 @@ layers:
   - Fn
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR ASTERISK
-  - FR 7
-  - FR 8
-  - FR 9
-  - FR MINUS
+  - KP MULTIPLY
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP MINUS
   - Gui+$$mdi:keyboard-tab$$
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:apple-keyboard-control$$
@@ -64,11 +64,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR 0
-  - {t: FR 4, h: LEFT META}
-  - {t: FR 5, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: FR 6, h: '$$mdi:apple-keyboard-control$$'}
-  - FR PLUS
+  - KP 0
+  - {t: KP 4, h: LEFT META}
+  - {t: KP 5, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: KP 6, h: '$$mdi:apple-keyboard-control$$'}
+  - KP PLUS
   - Gui+Ctl+$$mdi:arrow-left-bold$$
   - Gui+Ctl+D
   - Gui+Ctl+$$mdi:arrow-right-bold$$
@@ -79,10 +79,10 @@ layers:
   - FR L
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FR PERIOD
-  - FR 1
-  - FR 2
-  - FR 3
+  - KP DOT
+  - KP 1
+  - KP 2
+  - KP 3
   - FR COMMA
   - Ctl+FR 0
   - {t: D, h: '$$mdi:apple-keyboard-command$$'}
