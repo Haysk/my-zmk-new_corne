@@ -137,7 +137,7 @@
         layer_4 {
             display-name = "ACCENTS";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &trans          &kp FR_C_CEDILLA  &kp FR_U_GRAVE  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &kp FR_U_GRAVE  &kp FR_C_CEDILLA  &trans          &trans            &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &trans          &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_E_GRAVE  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans          &trans          &trans          &trans
                         &trans  &trans  &trans                                    &trans       &trans       &trans
