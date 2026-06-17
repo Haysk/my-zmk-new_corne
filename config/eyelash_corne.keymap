@@ -67,6 +67,34 @@
         };
     };
 
+    macros {
+        // AZERTY dead keys followed by space -> emit the literal symbol
+        // (^, `, ~) instead of waiting to combine with the next vowel.
+        sym_caret: sym_caret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings = <&kp FR_CARET &kp SPACE>;
+        };
+
+        sym_grave: sym_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings = <&kp FR_GRAVE &kp SPACE>;
+        };
+
+        sym_tilde: sym_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings = <&kp FR_TILDE &kp SPACE>;
+        };
+    };
+
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -112,9 +140,9 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &kp FR_CARET                       &kp LG(UP)      &kp FR_DQT        &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &kp FR_GRAVE        &trans
+&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &sym_caret                         &kp LG(UP)      &kp FR_DQT        &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &sym_grave          &trans
 &trans  &kp FR_LEFT_BRACE  &hml LEFT_GUI FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_GUI FR_EQUAL  &kp FR_EXCLAMATION  &trans
-&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
+&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &sym_tilde              &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
 
@@ -136,9 +164,9 @@
         layer_4 {
             display-name = "ACCENTS";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &kp FR_U_GRAVE  &kp FR_C_CEDILLA  &trans          &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &trans          &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_E_GRAVE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &kp LS(FR_CARET)  &trans          &kp FR_U_GRAVE  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &kp FR_CARET    &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans          &kp FR_E_GRAVE  &trans          &trans
                         &trans  &trans  &trans                                    &trans       &trans       &trans
             >;
         };
