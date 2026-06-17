@@ -102,7 +102,7 @@
             display-name = "NUMBER";
             bindings = <
 &trans  &kp FR_ASTERISK  &kp FR_N7               &kp FR_N8        &kp FR_N9           &kp FR_MINUS                         &kp LG(TAB)                      &trans     &kp LCTRL  &kp LEFT_ALT   &kp LEFT_WIN  &trans   &trans
-&mo 4   &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &kp LG(LC(LEFT))  &kp LG(LC(D))   &kp LG(LC(RIGHT))  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
+&trans  &kp FR_N0        &hml LEFT_META FR_N4     &hml LEFT_ALT FR_N5  &hml LCTRL FR_N6  &kp FR_PLUS          &kp LG(LC(LEFT))  &kp LG(LC(D))   &kp LG(LC(RIGHT))  &mkp RCLK  &kp FR_H   &kp FR_J       &kp FR_K      &kp FR_L  &trans
 &trans  &kp FR_PERIOD    &kp FR_N1               &kp FR_N2        &kp FR_N3           &kp FR_COMMA  &kp LC(FR_N0)          &kp LG(D)                        &mkp LCLK  &kp HOME   &kp PAGE_DOWN  &kp PG_UP     &kp END  &trans
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
