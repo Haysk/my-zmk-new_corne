@@ -172,11 +172,19 @@
 
         layer_4 {
             display-name = "ACCENTS";
+            // Souris : la main DROITE est « la souris ». Déplacement du curseur
+            // sur le home row (H A E I = mêmes touches que les flèches du layer
+            // NUMBER) et clics gauche / droit / milieu sous les pouces droits.
+            // La main GAUCHE scrolle sur son home row.
+            // Accents : ils gardent la main droite, décalés d'une rangée en
+            // conservant leur colonne (donc sous leur voyelle de base) :
+            //   ^ à é ç juste SOUS le déplacement (rangée basse),
+            //   ¨ ù è AU-DESSUS (rangée haute).
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans          &kp LS(FR_CARET)  &trans          &kp FR_U_GRAVE  &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans          &kp FR_CARET    &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans          &kp FR_E_GRAVE  &trans          &trans
-                        &trans  &trans  &trans                                    &trans       &trans       &trans
+&trans  &trans  &trans          &trans          &trans        &trans                            &trans  &trans  &kp LS(FR_CARET)  &trans          &kp FR_U_GRAVE  &kp FR_E_GRAVE    &trans
+&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans
+&trans  &trans  &trans          &trans          &trans        &trans           &trans          &trans  &trans  &kp FR_CARET      &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
+                                &trans  &trans  &trans                                          &mkp LCLK    &mkp RCLK    &mkp MCLK
             >;
         };
     };
