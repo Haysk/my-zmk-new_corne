@@ -39,7 +39,8 @@ set ideamarks             " marks Vim <-> bookmarks IDE synchronisés
 set highlightedyank       " flash sur le texte yanké
 set commentary            " gcc / gc{motion} pour commenter
 set surround              " cs/ds/ys : entourer (parenthèses, quotes, balises)
-set easymotion            " saut à l'écran (s2) — voir <leader>s
+"" easymotion : optionnel (exige les plugins IDE AceJump + IdeaVim-EasyMotion).
+"" On utilise plutôt AceJump en direct (voir section 1) -> 1 seul plugin.
 set argtextobj            " text object 'a' = argument :  cia, dia, via
 set textobj-entire        " ae / ie = tout le fichier  (yae, dae...)
 set NERDTree              " arbre projet pilotable au clavier
@@ -73,12 +74,11 @@ nnoremap <C-u> <C-u>zz
 "" =============================================================================
 ""  1) SAUTER À L'ÉCRAN   (remplace le clic pour atteindre un point visible)
 "" =============================================================================
-"" <leader>s puis 2 caractères -> labels sur toutes les occurrences à l'écran
-map <leader>s <Plug>(easymotion-s2)
-"" saut par mot (avant / arrière)
-map <leader>w <Plug>(easymotion-bd-w)
-"" saut par ligne (haut/bas)
-map <leader>l <Plug>(easymotion-bd-jk)
+"" AceJump (plugin IDE "AceJump" requis). Tape un caractère -> labels sur
+"" toutes les occurrences visibles, puis la lettre du label pour sauter.
+map <leader>s <Action>(AceAction)         " saut à n'importe quel caractère
+map <leader>l <Action>(AceLineAction)     " saut au début d'une ligne visible
+map <leader>w <Action>(AceTargetAction)   " saut + sélection du mot cible
 
 "" =============================================================================
 ""  2) FICHIERS / ONGLETS / RECHERCHE

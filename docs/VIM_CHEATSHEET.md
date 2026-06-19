@@ -31,7 +31,9 @@ Installe ces **plugins IDE** (Settings ▸ Plugins ▸ Marketplace), sinon certa
 lignes du `.ideavimrc` resteront inactives :
 
 1. **IdeaVim** (si pas déjà là)
-2. **AceJump** — requis par `easymotion` (`<leader>s`)
+2. **AceJump** — saut à l'écran au clavier (`<leader>s` / `<leader>l` / `<leader>w`).
+   On l'appelle en direct via `<Action>(AceAction)` : **un seul plugin suffit**
+   (pas besoin d'IdeaVim-EasyMotion).
 3. **Which-Key** (éditeur *TheBlob42*) — popup d'aide des mappings `<leader>`.
    Cherche `Which-Key` dans le Marketplace. Si bloqué (proxy), télécharge le
    `.zip` depuis plugins.jetbrains.com/plugin/15976-which-key puis
@@ -50,9 +52,9 @@ compte. Recharger la config : `:source ~/.ideavimrc` ou redémarrer.
 ### Sauter à l'écran (remplace le clic)
 | Touche | Action |
 |---|---|
-| `<leader>s` + 2 car. | saut AceJump à n'importe quelle occurrence visible |
-| `<leader>w` | saut par mot |
-| `<leader>l` | saut par ligne |
+| `<leader>s` + 1 car. | AceJump : labels sur chaque occurrence visible du caractère, tape la lettre du label pour sauter |
+| `<leader>l` | saut au début d'une ligne visible |
+| `<leader>w` | saut + sélection du mot cible |
 
 ### Fichiers / onglets / recherche
 | Touche | Action |
