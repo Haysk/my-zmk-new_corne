@@ -34,7 +34,7 @@ set ideamarks             " marks Vim <-> bookmarks IDE synchronisés
 "  PLUGINS IdeaVim   (https://jb.gg/ideavim-plugins)
 "  /!\ Certains exigent un plugin IDE installé (voir VIM_CHEATSHEET.md) :
 "      - easymotion  -> plugin IDE "AceJump"
-"      - which-key   -> plugin IDE "IdeaVim-Which-Key"
+"      - which-key   -> plugin IDE "Which-Key" (éditeur TheBlob42)
 " =============================================================================
 set highlightedyank       " flash sur le texte yanké
 set commentary            " gcc / gc{motion} pour commenter

@@ -32,7 +32,10 @@ lignes du `.ideavimrc` resteront inactives :
 
 1. **IdeaVim** (si pas déjà là)
 2. **AceJump** — requis par `easymotion` (`<leader>s`)
-3. **IdeaVim-Which-Key** — popup d'aide des mappings `<leader>`
+3. **Which-Key** (éditeur *TheBlob42*) — popup d'aide des mappings `<leader>`.
+   Cherche `Which-Key` dans le Marketplace. Si bloqué (proxy), télécharge le
+   `.zip` depuis plugins.jetbrains.com/plugin/15976-which-key puis
+   *Plugins ▸ ⚙️ ▸ Install Plugin from Disk…*
 
 Puis : Settings ▸ Editor ▸ Vim → vérifier que `ideavimrc` est bien pris en
 compte. Recharger la config : `:source ~/.ideavimrc` ou redémarrer.
