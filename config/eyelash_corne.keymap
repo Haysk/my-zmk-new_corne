@@ -96,13 +96,15 @@
 
         // Ctrl + molette = zoom universel (PyCharm, navigateur, images...).
         // Chaque cran : maintient Ctrl, envoie un cran de scroll, relâche Ctrl.
+        // >>> RÉGLAGE : SCRL_Y(120) = force du zoom par cran.
+        //     Trop lent -> augmente (150, 200). Saute trop -> baisse (80, 60).
         zoom_in: zoom_in {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
-            tap-ms = <10>;
+            tap-ms = <15>;
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &msc SCRL_UP>
+                     , <&macro_tap &msc SCRL_Y(120)>
                      , <&macro_release &kp LCTRL>;
         };
 
@@ -110,9 +112,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
-            tap-ms = <10>;
+            tap-ms = <15>;
             bindings = <&macro_press &kp LCTRL>
-                     , <&macro_tap &msc SCRL_DOWN>
+                     , <&macro_tap &msc SCRL_Y(-120)>
                      , <&macro_release &kp LCTRL>;
         };
     };
