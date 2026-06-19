@@ -3,10 +3,11 @@
 ""  Optimisé pour clavier Corne (base Graphite, OS AZERTY/FR)
 ""  Navigation principale = flèches du layer NUMBER, souris réduite au maximum.
 ""  Doc IdeaVim : https://jb.gg/h38q75   Actions : https://jb.gg/abva4t
+""  /!\ Vim n'autorise PAS de commentaire en fin de ligne `map`.
+""      -> les commentaires des mappings sont toujours sur la ligne AU-DESSUS.
 "" =============================================================================
 
 "" --- Leader = Espace ---------------------------------------------------------
-"" En mode normal, taper le pouce SPACE émet un espace -> leader idéal.
 let mapleader = " "
 "" 'space' ne doit plus avancer le curseur en normal (il devient leader)
 nnoremap <Space> <Nop>
@@ -22,41 +23,44 @@ set ignorecase            " recherche insensible à la casse...
 set smartcase             " ...sauf si la requête contient une majuscule
 set showmode
 set visualbell
-set clipboard+=ideaput    " les yank/paste passent par le presse-papier IDE
+set clipboard+=ideaput    " yank/paste via le presse-papier IDE
 set clipboard+=unnamed    " yank/paste = presse-papier système
 
 "" Intégration IDE
-set ideajoin              " J utilise le 'smart join' de PyCharm
-set idearefactormode=keep " garde le mode Vim pendant un refactor/rename inline
+set ideajoin              " J = 'smart join' de PyCharm
+set idearefactormode=keep " garde le mode Vim pendant un rename inline
 set ideamarks             " marks Vim <-> bookmarks IDE synchronisés
 
 "" =============================================================================
 ""  PLUGINS IdeaVim   (https://jb.gg/ideavim-plugins)
-""  /!\ Certains exigent un plugin IDE installé (voir VIM_CHEATSHEET.md) :
-""      - easymotion  -> plugins IDE "AceJump" + "IdeaVim-EasyMotion"
-""      - which-key   -> plugin IDE "Which-Key" (éditeur TheBlob42)
+""  /!\ easymotion exige les plugins IDE "AceJump" + "IdeaVim-EasyMotion".
+""      which-key  exige le plugin IDE "Which-Key" (éditeur TheBlob42).
 "" =============================================================================
 set highlightedyank       " flash sur le texte yanké
-set commentary            " gcc / gc{motion} pour commenter
-set surround              " cs/ds/ys : entourer (parenthèses, quotes, balises)
-set easymotion            " saut à l'écran (s2) — voir <leader>s
-set argtextobj            " text object 'a' = argument :  cia, dia, via
-set textobj-entire        " ae / ie = tout le fichier  (yae, dae...)
-set NERDTree              " arbre projet pilotable au clavier
-set which-key             " popup d'aide qui affiche les mappings <leader>
-set notimeout             " which-key : attend ta touche sans timeout
+set commentary            " gcc / gc{motion}
+set surround              " cs/ds/ys : entourer
+set argtextobj            " text object argument : cia, dia, via
+set textobj-entire        " ae / ie = tout le fichier
+set NERDTree              " arbre projet au clavier
+set which-key             " popup d'aide des mappings <leader>
+set notimeout             " which-key : attend ta touche
+
+"" easymotion : NE PAS laisser le plugin mapper <Leader> tout seul
+"" (sinon il vole <leader>o, <leader>p... -> on garde nos mappings).
+let g:EasyMotion_do_mapping = 0
+set easymotion
 
 "" =============================================================================
 ""  CONFORT D'ÉDITION
 "" =============================================================================
-"" Sortir du mode insertion sans Échap (utile, mais ta touche ESC dédiée marche)
+"" Sortir d'insertion sans Échap
 inoremap jk <Esc>
 inoremap kj <Esc>
 
 "" Effacer le surlignage de recherche
 nnoremap <leader>h :nohlsearch<CR>
 
-"" Déplacer des lignes (Alt-style sans Alt) en visuel
+"" Déplacer les lignes sélectionnées (visuel)
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
@@ -64,102 +68,113 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap < <gv
 vnoremap > >gv
 
-"" Centrer l'écran après un saut / une recherche
+"" Centrer l'écran après saut / recherche
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
 "" =============================================================================
-""  1) SAUTER À L'ÉCRAN   (remplace le clic pour atteindre un point visible)
+""  1) SAUTER À L'ÉCRAN   (remplace le clic)
 "" =============================================================================
-"" <leader>s puis 2 caractères -> labels sur toutes les occurrences à l'écran
+"" <leader>s + 2 caractères -> labels sur les occurrences visibles
 map <leader>s <Plug>(easymotion-s2)
 "" saut par mot (avant / arrière)
 map <leader>w <Plug>(easymotion-bd-w)
-"" saut par ligne (haut/bas)
+"" saut par ligne (haut / bas)
 map <leader>l <Plug>(easymotion-bd-jk)
 
 "" =============================================================================
 ""  2) FICHIERS / ONGLETS / RECHERCHE
 "" =============================================================================
-map <leader>o <Action>(GotoFile)            " ouvrir un fichier par nom
-map <leader>F <Action>(FindInPath)          " rechercher dans tout le projet
-map <leader>e <Action>(RecentFiles)         " fichiers récents (Switcher)
-map <leader>E <Action>(RecentLocations)     " emplacements récents
-map <leader>; <Action>(SearchEverywhere)    " "Search Everywhere" (double-Shift)
-"" Onglets : gt / gT (suivant / précédent) sont natifs IdeaVim
-map <leader>q <Action>(CloseContent)        " fermer l'onglet courant
+"" ouvrir un fichier par nom
+map <leader>o <Action>(GotoFile)
+"" rechercher dans tout le projet
+map <leader>F <Action>(FindInPath)
+"" fichiers récents (Switcher)
+map <leader>e <Action>(RecentFiles)
+"" emplacements récents
+map <leader>E <Action>(RecentLocations)
+"" Search Everywhere
+map <leader>: <Action>(SearchEverywhere)
+"" fermer l'onglet courant / tous (onglets : gt / gT natifs)
+map <leader>q <Action>(CloseContent)
 map <leader>Q <Action>(CloseAllEditors)
-"" Aller / revenir dans l'historique du curseur (jumplist IDE)
+"" reculer / avancer dans l'historique du curseur
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 
 "" =============================================================================
 ""  3) PANNEAUX D'OUTILS  (ouvrir / focus sans souris)
 "" =============================================================================
-map <leader>p <Action>(ActivateProjectToolWindow)     " arbre Projet
-map <leader>tt <Action>(ActivateTerminalToolWindow)   " Terminal
-map <leader>td <Action>(ActivateDebugToolWindow)      " Debug
-map <leader>tr <Action>(ActivateRunToolWindow)        " Run
-map <leader>tg <Action>(ActivateVersionControlToolWindow) " Git / Commit
-map <leader>tp <Action>(ActivateProblemsViewToolWindow)   " Problèmes
-map <leader>tf <Action>(ActivateFindToolWindow)       " résultats de recherche
-"" Sélectionner le fichier courant dans l'arbre projet
+"" arbre Projet / cibler le fichier courant
+map <leader>p <Action>(ActivateProjectToolWindow)
 map <leader>P <Action>(SelectInProjectView)
-"" Plein écran sur l'éditeur (cacher les panneaux)
+"" Terminal / Debug / Run
+map <leader>tt <Action>(ActivateTerminalToolWindow)
+map <leader>td <Action>(ActivateDebugToolWindow)
+map <leader>tr <Action>(ActivateRunToolWindow)
+"" Git / Problèmes / Résultats de recherche
+map <leader>tg <Action>(ActivateVersionControlToolWindow)
+map <leader>tp <Action>(ActivateProblemsViewToolWindow)
+map <leader>tf <Action>(ActivateFindToolWindow)
+"" masquer tous les panneaux (focus code)
 map <leader>z <Action>(HideAllWindows)
 
 "" =============================================================================
-""  4) CODE : NAVIGATION / REFACTOR / QUICK-FIX  (zéro menu contextuel)
+""  4) CODE : NAVIGATION / REFACTOR / QUICK-FIX
 "" =============================================================================
-"" Navigation sémantique
+"" déclaration / type / implémentation
 map gd <Action>(GotoDeclaration)
 map gy <Action>(GotoTypeDeclaration)
 map gi <Action>(GotoImplementation)
+"" usages (fenêtre / popup)
 map gr <Action>(FindUsages)
-map gh <Action>(QuickJavaDoc)            " doc rapide (équiv. K)
-map <leader>u <Action>(ShowUsages)       " usages en popup
-"" Erreurs / warnings
+map <leader>u <Action>(ShowUsages)
+"" doc rapide
+map gh <Action>(QuickJavaDoc)
+"" erreur suivante / précédente
 map ]e <Action>(GotoNextError)
 map [e <Action>(GotoPreviousError)
-"" Méthodes
+"" méthode suivante / précédente
 map ]m <Action>(MethodDown)
 map [m <Action>(MethodUp)
 
-"" Quick-fix & actions contextuelles
-map <leader>a <Action>(ShowIntentionActions)   " ampoule / quick-fix
-map <leader>cr <Action>(RenameElement)         " renommer
-map <leader>cf <Action>(ReformatCode)          " reformater
-map <leader>co <Action>(OptimizeImports)       " ranger les imports
-map <leader>cm <Action>(Refactorings.QuickListPopupAction) " menu Refactor
-map <leader>cg <Action>(Generate)              " Generate... (getters, etc.)
-map <leader>cd <Action>(QuickImplementations)  " aperçu de l'implémentation
+"" quick-fix / intentions (ampoule)
+map <leader>a <Action>(ShowIntentionActions)
+"" renommer / reformater / ranger les imports
+map <leader>cr <Action>(RenameElement)
+map <leader>cf <Action>(ReformatCode)
+map <leader>co <Action>(OptimizeImports)
+"" menu Refactor / Generate / aperçu implémentation
+map <leader>cm <Action>(Refactorings.QuickListPopupAction)
+map <leader>cg <Action>(Generate)
+map <leader>cd <Action>(QuickImplementations)
 
-"" Run / Debug
+"" Run / Debug / breakpoint / stop
 map <leader>rr <Action>(Run)
 map <leader>rd <Action>(Debug)
 map <leader>rc <Action>(RunClass)
 map <leader>rb <Action>(ToggleLineBreakpoint)
 map <leader>rs <Action>(Stop)
 
-"" Bookmarks (navigation rapide sans souris)
+"" Bookmarks (navigation rapide)
 map <leader>m <Action>(ToggleBookmark)
 map <leader>M <Action>(ShowBookmarks)
 
-"" NERDTree (arbre projet au clavier) : <leader>n pour ouvrir/cibler
+"" NERDTree (arbre projet au clavier)
 map <leader>n :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
 
 "" =============================================================================
-""  WHICH-KEY : descriptions des groupes (popup d'aide)
+""  WHICH-KEY : descriptions des groupes
 "" =============================================================================
 let g:WhichKeyDesc_jump   = "<leader>s  saut écran (2 char)"
 let g:WhichKeyDesc_files  = "<leader>o  ouvrir fichier"
 let g:WhichKeyDesc_recent = "<leader>e  fichiers récents"
 let g:WhichKeyDesc_find   = "<leader>F  rechercher dans le projet"
-let g:WhichKeyDesc_tools  = "<leader>t  + panneaux (t/d/r/g/p/f)"
-let g:WhichKeyDesc_code   = "<leader>c  + code (r/f/o/m/g/d)"
-let g:WhichKeyDesc_run    = "<leader>r  + run/debug (r/d/c/b/s)"
+let g:WhichKeyDesc_tools  = "<leader>t  panneaux (t/d/r/g/p/f)"
+let g:WhichKeyDesc_code   = "<leader>c  code (r/f/o/m/g/d)"
+let g:WhichKeyDesc_run    = "<leader>r  run/debug (r/d/c/b/s)"
 let g:WhichKeyDesc_action = "<leader>a  quick-fix / intentions"
 let g:WhichKeyDesc_proj   = "<leader>p  panneau Projet"
