@@ -73,8 +73,8 @@ nnoremap <C-u> <C-u>zz
 "" =============================================================================
 ""  1) SAUTER À L'ÉCRAN   (remplace le clic)
 "" =============================================================================
-"" <leader>s + 2 caractères -> labels sur les occurrences visibles
-map <leader>s <Plug>(easymotion-s2)
+"" <leader>s + 1 caractère -> labels sur les occurrences visibles
+map <leader>s <Plug>(easymotion-s)
 "" saut par mot (avant / arrière)
 map <leader>w <Plug>(easymotion-bd-w)
 "" saut par ligne (haut / bas)
