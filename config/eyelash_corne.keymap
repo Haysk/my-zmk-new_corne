@@ -172,19 +172,18 @@
 
         layer_4 {
             display-name = "ACCENTS";
-            // Souris : la main DROITE est « la souris ». Déplacement du curseur
-            // sur le home row (H A E I = mêmes touches que les flèches du layer
-            // NUMBER) et clics gauche / droit / milieu sous les pouces droits.
-            // La main GAUCHE scrolle sur son home row.
-            // Accents : ils gardent la main droite, décalés d'une rangée en
-            // conservant leur colonne (donc sous leur voyelle de base) :
-            //   ^ à é ç juste SOUS le déplacement (rangée basse),
-            //   ¨ ù è AU-DESSUS (rangée haute).
+            // Souris : déplacement du curseur sur le home row DROIT (H A E I =
+            // mêmes touches que les flèches du layer NUMBER) ; clics milieu /
+            // droit / gauche sur le home row GAUCHE (annulaire / majeur / index,
+            // le clic gauche tombant sous l'index). Pas de scroll sur ce layer.
+            // Accents : main droite, décalés d'une rangée en gardant leur
+            // colonne (sous leur voyelle de base) : ^ à é ç en rangée basse,
+            // ¨ ù è en rangée haute.
             bindings = <
-&trans  &trans  &trans          &trans          &trans        &trans                            &trans  &trans  &kp LS(FR_CARET)  &trans          &kp FR_U_GRAVE  &kp FR_E_GRAVE    &trans
-&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans
-&trans  &trans  &trans          &trans          &trans        &trans           &trans          &trans  &trans  &kp FR_CARET      &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
-                                &trans  &trans  &trans                                          &mkp LCLK    &mkp RCLK    &mkp MCLK
+&trans  &trans  &trans      &trans      &trans      &trans                            &trans  &trans  &kp LS(FR_CARET)  &trans          &kp FR_U_GRAVE  &kp FR_E_GRAVE    &trans
+&trans  &trans  &mkp MCLK   &mkp RCLK   &mkp LCLK   &trans           &trans  &trans  &trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans
+&trans  &trans  &trans      &trans      &trans      &trans           &trans          &trans  &trans  &kp FR_CARET      &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
+                            &trans  &trans  &trans                                            &trans       &trans       &trans
             >;
         };
     };
