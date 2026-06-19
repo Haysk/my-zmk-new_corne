@@ -143,7 +143,7 @@
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(LS(FR_EQUAL)) LA(LS(FR_MINUS))>;
+            sensor-bindings = <&inc_dec_kp LA(LS(FR_EQUAL)) LA(LS(KP_MINUS))>;
         };
 
         raise_layer {
