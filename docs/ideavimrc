@@ -44,7 +44,6 @@ set commentary            " gcc / gc{motion}
 set surround              " cs/ds/ys : entourer
 set argtextobj            " text object argument : cia, dia, via
 set textobj-entire        " ae / ie = tout le fichier
-set NERDTree              " arbre projet au clavier
 set which-key             " popup d'aide des mappings <leader>
 set notimeout             " which-key : attend ta touche
 
@@ -155,10 +154,6 @@ map <leader>rs <Action>(Stop)
 map <leader>m <Action>(ToggleBookmark)
 map <leader>M <Action>(ShowBookmarks)
 
-"" NERDTree (arbre projet au clavier)
-map <leader>n :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<CR>
-
 "" =============================================================================
 ""  WHICH-KEY : popup d'aide (plugin IDE "Which-Key" de TheBlob42)
 ""  Une description par commande -> popup lisible au lieu du <Action> brut.
@@ -218,8 +213,6 @@ let g:WhichKeyDesc_run_stop   = "<leader>rs Stop"
 "" --- Bookmarks / NERDTree / divers ---
 let g:WhichKeyDesc_bmToggle = "<leader>m  bookmark on/off"
 let g:WhichKeyDesc_bmList   = "<leader>M  liste des bookmarks"
-let g:WhichKeyDesc_nerd     = "<leader>n  NERDTree on/off"
-let g:WhichKeyDesc_nerdFind = "<leader>nf NERDTree : cibler le fichier"
 let g:WhichKeyDesc_nohl     = "<leader>h  effacer le surlignage"
 
 "" --- Navigation sémantique (préfixes g / ] / [) ---
