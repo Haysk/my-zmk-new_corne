@@ -160,14 +160,75 @@ map <leader>n :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
 
 "" =============================================================================
-""  WHICH-KEY : descriptions des groupes
+""  WHICH-KEY : popup d'aide (plugin IDE "Which-Key" de TheBlob42)
+""  Une description par commande -> popup lisible au lieu du <Action> brut.
+""  Format : let g:WhichKeyDesc_<nom_unique> = "<séquence> description"
 "" =============================================================================
-let g:WhichKeyDesc_jump   = "<leader>s  saut écran (2 char)"
-let g:WhichKeyDesc_files  = "<leader>o  ouvrir fichier"
-let g:WhichKeyDesc_recent = "<leader>e  fichiers récents"
-let g:WhichKeyDesc_find   = "<leader>F  rechercher dans le projet"
-let g:WhichKeyDesc_tools  = "<leader>t  panneaux (t/d/r/g/p/f)"
-let g:WhichKeyDesc_code   = "<leader>c  code (r/f/o/m/g/d)"
-let g:WhichKeyDesc_run    = "<leader>r  run/debug (r/d/c/b/s)"
-let g:WhichKeyDesc_action = "<leader>a  quick-fix / intentions"
-let g:WhichKeyDesc_proj   = "<leader>p  panneau Projet"
+
+"" --- Apparence (optionnel ; variables inconnues simplement ignorées) ---
+let g:WhichKey_DefaultDelay = 200
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+let g:WhichKey_ShowTypedSequence = "true"
+let g:WhichKey_FontSize = 14
+
+"" --- Sauts à l'écran ---
+let g:WhichKeyDesc_jumpChar = "<leader>s  saut écran (1 car, easymotion)"
+let g:WhichKeyDesc_jumpLine = "<leader>l  saut ligne (easymotion)"
+
+"" --- Fichiers / onglets / recherche ---
+let g:WhichKeyDesc_open       = "<leader>o  ouvrir un fichier"
+let g:WhichKeyDesc_findInPath = "<leader>F  rechercher dans le projet"
+let g:WhichKeyDesc_recent     = "<leader>e  fichiers récents"
+let g:WhichKeyDesc_recentLoc  = "<leader>E  emplacements récents"
+let g:WhichKeyDesc_searchEvery = "<leader>:  Search Everywhere"
+let g:WhichKeyDesc_closeTab   = "<leader>q  fermer l'onglet"
+let g:WhichKeyDesc_closeAll   = "<leader>Q  fermer tous les onglets"
+
+"" --- Panneaux : groupe <leader>t ---
+let g:WhichKeyDesc_tools      = "<leader>t  +panneaux"
+let g:WhichKeyDesc_tools_term = "<leader>tt Terminal"
+let g:WhichKeyDesc_tools_dbg  = "<leader>td Debug"
+let g:WhichKeyDesc_tools_run  = "<leader>tr Run"
+let g:WhichKeyDesc_tools_git  = "<leader>tg Git / Commit"
+let g:WhichKeyDesc_tools_pb   = "<leader>tp Problèmes"
+let g:WhichKeyDesc_tools_find = "<leader>tf Résultats de recherche"
+let g:WhichKeyDesc_proj       = "<leader>p  panneau Projet"
+let g:WhichKeyDesc_projSelect = "<leader>P  cibler le fichier dans l'arbre"
+let g:WhichKeyDesc_hidePanels = "<leader>z  masquer les panneaux"
+
+"" --- Code : groupe <leader>c + actions ---
+let g:WhichKeyDesc_code        = "<leader>c  +code"
+let g:WhichKeyDesc_code_rename = "<leader>cr renommer"
+let g:WhichKeyDesc_code_fmt    = "<leader>cf reformater"
+let g:WhichKeyDesc_code_imports = "<leader>co ranger les imports"
+let g:WhichKeyDesc_code_refac  = "<leader>cm menu Refactor"
+let g:WhichKeyDesc_code_gen    = "<leader>cg Generate..."
+let g:WhichKeyDesc_code_impl   = "<leader>cd aperçu implémentation"
+let g:WhichKeyDesc_intentions  = "<leader>a  quick-fix / intentions"
+let g:WhichKeyDesc_usages      = "<leader>u  usages (popup)"
+
+"" --- Run / Debug : groupe <leader>r ---
+let g:WhichKeyDesc_run        = "<leader>r  +run/debug"
+let g:WhichKeyDesc_run_run    = "<leader>rr Run"
+let g:WhichKeyDesc_run_dbg    = "<leader>rd Debug"
+let g:WhichKeyDesc_run_class  = "<leader>rc Run la classe"
+let g:WhichKeyDesc_run_break  = "<leader>rb breakpoint on/off"
+let g:WhichKeyDesc_run_stop   = "<leader>rs Stop"
+
+"" --- Bookmarks / NERDTree / divers ---
+let g:WhichKeyDesc_bmToggle = "<leader>m  bookmark on/off"
+let g:WhichKeyDesc_bmList   = "<leader>M  liste des bookmarks"
+let g:WhichKeyDesc_nerd     = "<leader>n  NERDTree on/off"
+let g:WhichKeyDesc_nerdFind = "<leader>nf NERDTree : cibler le fichier"
+let g:WhichKeyDesc_nohl     = "<leader>h  effacer le surlignage"
+
+"" --- Navigation sémantique (préfixes g / ] / [) ---
+let g:WhichKeyDesc_gd = "gd déclaration"
+let g:WhichKeyDesc_gy = "gy type"
+let g:WhichKeyDesc_gi = "gi implémentation"
+let g:WhichKeyDesc_gr = "gr usages"
+let g:WhichKeyDesc_gh = "gh doc rapide"
+let g:WhichKeyDesc_nextErr = "]e erreur suivante"
+let g:WhichKeyDesc_prevErr = "[e erreur précédente"
+let g:WhichKeyDesc_nextMeth = "]m méthode suivante"
+let g:WhichKeyDesc_prevMeth = "[m méthode précédente"
