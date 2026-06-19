@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 60   // force des touches de scroll du milieu (10 d'origine)
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100   // force des touches de scroll du milieu (10 d'origine)
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
