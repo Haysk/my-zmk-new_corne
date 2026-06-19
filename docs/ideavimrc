@@ -56,10 +56,6 @@ set easymotion
 "" =============================================================================
 ""  CONFORT D'ÉDITION
 "" =============================================================================
-"" Sortir d'insertion sans Échap
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 "" Effacer le surlignage de recherche
 nnoremap <leader>h :nohlsearch<CR>
 
