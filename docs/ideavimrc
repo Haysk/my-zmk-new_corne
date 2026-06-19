@@ -60,10 +60,6 @@ inoremap kj <Esc>
 "" Effacer le surlignage de recherche
 nnoremap <leader>h :nohlsearch<CR>
 
-"" Déplacer les lignes sélectionnées (visuel)
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
 "" Garder la sélection après indentation
 vnoremap < <gv
 vnoremap > >gv
