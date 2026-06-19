@@ -1,19 +1,19 @@
-" =============================================================================
-"  .ideavimrc  —  PyCharm + IdeaVim
-"  Optimisé pour clavier Corne (base Graphite, OS AZERTY/FR)
-"  Navigation principale = flèches du layer NUMBER, souris réduite au maximum.
-"  Doc IdeaVim : https://jb.gg/h38q75   Actions : https://jb.gg/abva4t
-" =============================================================================
+"" =============================================================================
+""  .ideavimrc  —  PyCharm + IdeaVim
+""  Optimisé pour clavier Corne (base Graphite, OS AZERTY/FR)
+""  Navigation principale = flèches du layer NUMBER, souris réduite au maximum.
+""  Doc IdeaVim : https://jb.gg/h38q75   Actions : https://jb.gg/abva4t
+"" =============================================================================
 
-" --- Leader = Espace ---------------------------------------------------------
-" En mode normal, taper le pouce SPACE émet un espace -> leader idéal.
+"" --- Leader = Espace ---------------------------------------------------------
+"" En mode normal, taper le pouce SPACE émet un espace -> leader idéal.
 let mapleader = " "
-" 'space' ne doit plus avancer le curseur en normal (il devient leader)
+"" 'space' ne doit plus avancer le curseur en normal (il devient leader)
 nnoremap <Space> <Nop>
 
-" =============================================================================
-"  OPTIONS
-" =============================================================================
+"" =============================================================================
+""  OPTIONS
+"" =============================================================================
 set scrolloff=8            " garde 8 lignes de contexte autour du curseur
 set sidescrolloff=8
 set incsearch             " recherche incrémentale
@@ -25,17 +25,17 @@ set visualbell
 set clipboard+=ideaput    " les yank/paste passent par le presse-papier IDE
 set clipboard+=unnamed    " yank/paste = presse-papier système
 
-" Intégration IDE
+"" Intégration IDE
 set ideajoin              " J utilise le 'smart join' de PyCharm
 set idearefactormode=keep " garde le mode Vim pendant un refactor/rename inline
 set ideamarks             " marks Vim <-> bookmarks IDE synchronisés
 
-" =============================================================================
-"  PLUGINS IdeaVim   (https://jb.gg/ideavim-plugins)
-"  /!\ Certains exigent un plugin IDE installé (voir VIM_CHEATSHEET.md) :
-"      - easymotion  -> plugin IDE "AceJump"
-"      - which-key   -> plugin IDE "Which-Key" (éditeur TheBlob42)
-" =============================================================================
+"" =============================================================================
+""  PLUGINS IdeaVim   (https://jb.gg/ideavim-plugins)
+""  /!\ Certains exigent un plugin IDE installé (voir VIM_CHEATSHEET.md) :
+""      - easymotion  -> plugin IDE "AceJump"
+""      - which-key   -> plugin IDE "Which-Key" (éditeur TheBlob42)
+"" =============================================================================
 set highlightedyank       " flash sur le texte yanké
 set commentary            " gcc / gc{motion} pour commenter
 set surround              " cs/ds/ys : entourer (parenthèses, quotes, balises)
@@ -46,58 +46,58 @@ set NERDTree              " arbre projet pilotable au clavier
 set which-key             " popup d'aide qui affiche les mappings <leader>
 set notimeout             " which-key : attend ta touche sans timeout
 
-" =============================================================================
-"  CONFORT D'ÉDITION
-" =============================================================================
-" Sortir du mode insertion sans Échap (utile, mais ta touche ESC dédiée marche)
+"" =============================================================================
+""  CONFORT D'ÉDITION
+"" =============================================================================
+"" Sortir du mode insertion sans Échap (utile, mais ta touche ESC dédiée marche)
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" Effacer le surlignage de recherche
+"" Effacer le surlignage de recherche
 nnoremap <leader>h :nohlsearch<CR>
 
-" Déplacer des lignes (Alt-style sans Alt) en visuel
+"" Déplacer des lignes (Alt-style sans Alt) en visuel
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" Garder la sélection après indentation
+"" Garder la sélection après indentation
 vnoremap < <gv
 vnoremap > >gv
 
-" Centrer l'écran après un saut / une recherche
+"" Centrer l'écran après un saut / une recherche
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
-" =============================================================================
-"  1) SAUTER À L'ÉCRAN   (remplace le clic pour atteindre un point visible)
-" =============================================================================
-" <leader>s puis 2 caractères -> labels sur toutes les occurrences à l'écran
+"" =============================================================================
+""  1) SAUTER À L'ÉCRAN   (remplace le clic pour atteindre un point visible)
+"" =============================================================================
+"" <leader>s puis 2 caractères -> labels sur toutes les occurrences à l'écran
 map <leader>s <Plug>(easymotion-s2)
-" saut par mot (avant / arrière)
+"" saut par mot (avant / arrière)
 map <leader>w <Plug>(easymotion-bd-w)
-" saut par ligne (haut/bas)
+"" saut par ligne (haut/bas)
 map <leader>l <Plug>(easymotion-bd-jk)
 
-" =============================================================================
-"  2) FICHIERS / ONGLETS / RECHERCHE
-" =============================================================================
+"" =============================================================================
+""  2) FICHIERS / ONGLETS / RECHERCHE
+"" =============================================================================
 map <leader>o <Action>(GotoFile)            " ouvrir un fichier par nom
 map <leader>F <Action>(FindInPath)          " rechercher dans tout le projet
 map <leader>e <Action>(RecentFiles)         " fichiers récents (Switcher)
 map <leader>E <Action>(RecentLocations)     " emplacements récents
 map <leader>; <Action>(SearchEverywhere)    " "Search Everywhere" (double-Shift)
-" Onglets : gt / gT (suivant / précédent) sont natifs IdeaVim
+"" Onglets : gt / gT (suivant / précédent) sont natifs IdeaVim
 map <leader>q <Action>(CloseContent)        " fermer l'onglet courant
 map <leader>Q <Action>(CloseAllEditors)
-" Aller / revenir dans l'historique du curseur (jumplist IDE)
+"" Aller / revenir dans l'historique du curseur (jumplist IDE)
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 
-" =============================================================================
-"  3) PANNEAUX D'OUTILS  (ouvrir / focus sans souris)
-" =============================================================================
+"" =============================================================================
+""  3) PANNEAUX D'OUTILS  (ouvrir / focus sans souris)
+"" =============================================================================
 map <leader>p <Action>(ActivateProjectToolWindow)     " arbre Projet
 map <leader>tt <Action>(ActivateTerminalToolWindow)   " Terminal
 map <leader>td <Action>(ActivateDebugToolWindow)      " Debug
@@ -105,29 +105,29 @@ map <leader>tr <Action>(ActivateRunToolWindow)        " Run
 map <leader>tg <Action>(ActivateVersionControlToolWindow) " Git / Commit
 map <leader>tp <Action>(ActivateProblemsViewToolWindow)   " Problèmes
 map <leader>tf <Action>(ActivateFindToolWindow)       " résultats de recherche
-" Sélectionner le fichier courant dans l'arbre projet
+"" Sélectionner le fichier courant dans l'arbre projet
 map <leader>P <Action>(SelectInProjectView)
-" Plein écran sur l'éditeur (cacher les panneaux)
+"" Plein écran sur l'éditeur (cacher les panneaux)
 map <leader>z <Action>(HideAllWindows)
 
-" =============================================================================
-"  4) CODE : NAVIGATION / REFACTOR / QUICK-FIX  (zéro menu contextuel)
-" =============================================================================
-" Navigation sémantique
+"" =============================================================================
+""  4) CODE : NAVIGATION / REFACTOR / QUICK-FIX  (zéro menu contextuel)
+"" =============================================================================
+"" Navigation sémantique
 map gd <Action>(GotoDeclaration)
 map gy <Action>(GotoTypeDeclaration)
 map gi <Action>(GotoImplementation)
 map gr <Action>(FindUsages)
 map gh <Action>(QuickJavaDoc)            " doc rapide (équiv. K)
 map <leader>u <Action>(ShowUsages)       " usages en popup
-" Erreurs / warnings
+"" Erreurs / warnings
 map ]e <Action>(GotoNextError)
 map [e <Action>(GotoPreviousError)
-" Méthodes
+"" Méthodes
 map ]m <Action>(MethodDown)
 map [m <Action>(MethodUp)
 
-" Quick-fix & actions contextuelles
+"" Quick-fix & actions contextuelles
 map <leader>a <Action>(ShowIntentionActions)   " ampoule / quick-fix
 map <leader>cr <Action>(RenameElement)         " renommer
 map <leader>cf <Action>(ReformatCode)          " reformater
@@ -136,24 +136,24 @@ map <leader>cm <Action>(Refactorings.QuickListPopupAction) " menu Refactor
 map <leader>cg <Action>(Generate)              " Generate... (getters, etc.)
 map <leader>cd <Action>(QuickImplementations)  " aperçu de l'implémentation
 
-" Run / Debug
+"" Run / Debug
 map <leader>rr <Action>(Run)
 map <leader>rd <Action>(Debug)
 map <leader>rc <Action>(RunClass)
 map <leader>rb <Action>(ToggleLineBreakpoint)
 map <leader>rs <Action>(Stop)
 
-" Bookmarks (navigation rapide sans souris)
+"" Bookmarks (navigation rapide sans souris)
 map <leader>m <Action>(ToggleBookmark)
 map <leader>M <Action>(ShowBookmarks)
 
-" NERDTree (arbre projet au clavier) : <leader>n pour ouvrir/cibler
+"" NERDTree (arbre projet au clavier) : <leader>n pour ouvrir/cibler
 map <leader>n :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
 
-" =============================================================================
-"  WHICH-KEY : descriptions des groupes (popup d'aide)
-" =============================================================================
+"" =============================================================================
+""  WHICH-KEY : descriptions des groupes (popup d'aide)
+"" =============================================================================
 let g:WhichKeyDesc_jump   = "<leader>s  saut écran (2 char)"
 let g:WhichKeyDesc_files  = "<leader>o  ouvrir fichier"
 let g:WhichKeyDesc_recent = "<leader>e  fichiers récents"
