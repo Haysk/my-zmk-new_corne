@@ -11,6 +11,9 @@
 let mapleader = " "
 "" 'space' ne doit plus avancer le curseur en normal (il devient leader)
 nnoremap <Space> <Nop>
+"" <leader><leader> = préfixe par défaut d'EasyMotion -> on le neutralise
+"" pour qu'il n'écrive jamais de texte (libre à réaffecter plus tard).
+nnoremap <leader><leader> <Nop>
 
 "" =============================================================================
 ""  OPTIONS
