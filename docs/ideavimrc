@@ -44,6 +44,7 @@ set commentary            " gcc / gc{motion}
 set surround              " cs/ds/ys : entourer
 set argtextobj            " text object argument : cia, dia, via
 set textobj-entire        " ae / ie = tout le fichier
+set NERDTree              " arbre projet avec raccourcis vim + menu 'm'
 set which-key             " popup d'aide des mappings <leader>
 set notimeout             " which-key : attend ta touche
 
@@ -99,9 +100,10 @@ map <C-i> <Action>(Forward)
 "" =============================================================================
 ""  3) PANNEAUX D'OUTILS  (ouvrir / focus sans souris)
 "" =============================================================================
-"" arbre Projet / cibler le fichier courant
-map <leader>p <Action>(ActivateProjectToolWindow)
-map <leader>P <Action>(SelectInProjectView)
+"" arbre Projet (NERDTree : j/k, o/Entrée ouvrir, m menu fichiers, q fermer)
+map <leader>p :NERDTreeToggle<CR>
+"" cibler le fichier courant dans l'arbre
+map <leader>P :NERDTreeFind<CR>
 "" Terminal / Debug / Run
 map <leader>tt <Action>(ActivateTerminalToolWindow)
 map <leader>td <Action>(ActivateDebugToolWindow)
@@ -187,7 +189,7 @@ let g:WhichKeyDesc_tools_run  = "<leader>tr Run"
 let g:WhichKeyDesc_tools_git  = "<leader>tg Git / Commit"
 let g:WhichKeyDesc_tools_pb   = "<leader>tp Problèmes"
 let g:WhichKeyDesc_tools_find = "<leader>tf Résultats de recherche"
-let g:WhichKeyDesc_proj       = "<leader>p  panneau Projet"
+let g:WhichKeyDesc_proj       = "<leader>p  arbre projet (NERDTree)"
 let g:WhichKeyDesc_projSelect = "<leader>P  cibler le fichier dans l'arbre"
 let g:WhichKeyDesc_hidePanels = "<leader>z  masquer les panneaux"
 
