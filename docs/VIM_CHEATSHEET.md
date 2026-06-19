@@ -32,7 +32,7 @@ lignes du `.ideavimrc` resteront inactives :
 
 1. **IdeaVim** (si pas déjà là)
 2. **AceJump** + **IdeaVim-EasyMotion** — requis par `easymotion`
-   (`<leader>s` / `<leader>w` / `<leader>l`). Les deux sont nécessaires :
+   (`<leader>s` / `<leader>l`). Les deux sont nécessaires :
    EasyMotion s'appuie sur AceJump et permet `d`/`y`/`c` + saut.
 3. **Which-Key** (éditeur *TheBlob42*) — popup d'aide des mappings `<leader>`.
    Cherche `Which-Key` dans le Marketplace. Si bloqué (proxy), télécharge le
@@ -52,8 +52,7 @@ compte. Recharger la config : `:source ~/.ideavimrc` ou redémarrer.
 ### Sauter à l'écran (remplace le clic)
 | Touche | Action |
 |---|---|
-| `<leader>s` + n car. + Entrée | easymotion : labels sur les occurrences visibles, tape la lettre du label pour sauter |
-| `<leader>w` | saut par mot |
+| `<leader>s` + 1 car. | easymotion : labels sur les occurrences visibles, tape la lettre du label pour sauter |
 | `<leader>l` | saut par ligne |
 
 ### Fichiers / onglets / recherche
