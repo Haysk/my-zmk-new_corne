@@ -93,12 +93,40 @@
             tap-ms = <5>;
             bindings = <&kp FR_TILDE &kp SPACE>;
         };
+
+        // Ctrl + molette = zoom universel (PyCharm, navigateur, images...).
+        // Chaque cran : maintient Ctrl, envoie un cran de scroll, relâche Ctrl.
+        zoom_in: zoom_in {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&macro_tap &msc SCRL_UP>
+                     , <&macro_release &kp LCTRL>;
+        };
+
+        zoom_out: zoom_out {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&macro_tap &msc SCRL_DOWN>
+                     , <&macro_release &kp LCTRL>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+    };
+
+    zoom_encoder: zoom_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&zoom_in>, <&zoom_out>;
     };
 
     combos {
@@ -143,7 +171,7 @@
                                               &trans           &trans              &trans                                                                &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(LS(FR_EQUAL)) LA(LS(KP_MINUS))>;
+            sensor-bindings = <&zoom_encoder>;
         };
 
         raise_layer {
