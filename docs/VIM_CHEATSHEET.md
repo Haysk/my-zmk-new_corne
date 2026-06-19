@@ -52,7 +52,7 @@ compte. Recharger la config : `:source ~/.ideavimrc` ou redémarrer.
 ### Sauter à l'écran (remplace le clic)
 | Touche | Action |
 |---|---|
-| `<leader>s` + 1 car. | easymotion : labels sur les occurrences visibles, tape la lettre du label pour sauter |
+| `<leader>s` + n car. + Entrée | easymotion : labels sur les occurrences visibles, tape la lettre du label pour sauter |
 | `<leader>w` | saut par mot |
 | `<leader>l` | saut par ligne |
 
