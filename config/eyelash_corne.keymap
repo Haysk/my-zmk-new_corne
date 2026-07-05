@@ -31,11 +31,54 @@
 
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        // "Word layers" (module urob/zmk-auto-layer) : le layer reste actif
+        // tant qu'on tape des touches de la continue-list, puis se coupe
+        // tout seul. Un re-tap le coupe aussi manuellement.
+        num_word: num_word {
+            compatible = "zmk,behavior-auto-layer";
+            display-name = "Num Word";
+            #binding-cells = <1>;
+            continue-list = <FR_N0 FR_N1 FR_N2 FR_N3 FR_N4 FR_N5 FR_N6 FR_N7 FR_N8 FR_N9
+                             FR_PERIOD FR_COMMA FR_PLUS FR_MINUS FR_ASTERISK
+                             BACKSPACE DELETE>;
+            ignore-modifiers;
+        };
+
+        // nav_word pointe sur le layer NAVWORD (quasi transparent) : toute
+        // touche hors flèches/nav passe sur la couche de base ET coupe le
+        // word en même temps -> pas de tap Shift pour sortir, ESC ou une
+        // lettre suffit (important en mode normal IdeaVim où les flèches
+        // sont bloquées).
+        nav_word: nav_word {
+            compatible = "zmk,behavior-auto-layer";
+            display-name = "Nav Word";
+            #binding-cells = <1>;
+            continue-list = <LEFT DOWN UP RIGHT HOME END PG_UP PAGE_DOWN
+                             BACKSPACE DELETE>;
+            ignore-modifiers;
+        };
+
+        // Smart shifts : maintien = Shift, tap = word layer. Activation
+        // croisée : pouce droit -> chiffres (main gauche), pouce gauche ->
+        // flèches (main droite), pour activer d'une main et taper de l'autre.
+        shift_num: shift_num {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Shift / Num Word";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&num_word>;
+        };
+
+        shift_nav: shift_nav {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Shift / Nav Word";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&nav_word>;
         };
 
         // Positional home-row mods: the modifier only fires when a key on the
@@ -128,7 +171,7 @@
 &kp BACKSPACE  &kp FR_B  &kp FR_L           &kp FR_D           &kp FR_W        &kp FR_Z                                        &msc SCRL_UP                     &kp FR_SQT      &kp FR_F        &kp FR_O           &kp FR_U           &kp FR_J      &kp DEL
 &kp ESC        &kp FR_N  &hml LEFT_GUI FR_R  &hml LEFT_ALT FR_T  &hml LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &kp LC(FR_L)    &msc SCRL_RIGHT  &kp FR_Y        &hmr LCTRL FR_H  &hmr LEFT_ALT FR_A  &hmr LEFT_GUI FR_E  &kp FR_I  &kp FR_COLON
 &kp K_APP      &kp FR_X  &kp FR_M           &kp FR_C           &kp FR_V        &kp FR_Q        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp FR_SLASH  &kp FR_SEMICOLON
-                                      &lt 4 TAB       &lt 1 SPACE  &kp LEFT_SHIFT                                                                &td0           &lt 2 ENTER  &mo 3
+                                      &lt 4 TAB       &lt 1 SPACE  &shift_nav LEFT_SHIFT 5                                                                &shift_num LEFT_SHIFT 1           &lt 2 ENTER  &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -184,6 +227,21 @@
 &trans  &trans  &mkp MCLK   &mkp RCLK   &mkp LCLK   &trans           &trans  &trans  &trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_UP     &mmv MOVE_RIGHT   &trans
 &trans  &trans  &trans      &trans      &trans      &trans           &trans          &trans  &trans  &kp FR_CARET      &kp FR_A_GRAVE  &kp FR_E_ACUTE  &kp FR_C_CEDILLA  &trans
                             &trans  &trans  &trans                                            &trans       &trans       &trans
+            >;
+        };
+
+        layer_5 {
+            display-name = "NAVWORD";
+            // Layer dédié au nav_word : uniquement flèches + Home/PgDn/PgUp/End
+            // sur la main droite (mêmes positions que le layer NUMBER), tout le
+            // reste est transparent. Une touche hors nav tape son caractère de
+            // base ET désactive le word -> sortie sans action supplémentaire.
+            // Les home-row mods gauches restent dispo (Ctrl+flèches = saut de mot).
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans                  &trans  &trans     &trans         &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN       &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans  &kp HOME   &kp PAGE_DOWN  &kp PG_UP  &kp END    &trans
+                        &trans  &trans  &trans                                          &trans  &trans  &trans
             >;
         };
     };
