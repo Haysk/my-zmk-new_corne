@@ -56,8 +56,7 @@
             compatible = "zmk,behavior-auto-layer";
             display-name = "Nav Word";
             #binding-cells = <1>;
-            continue-list = <LEFT DOWN UP RIGHT HOME END PG_UP PAGE_DOWN
-                             BACKSPACE DELETE>;
+            continue-list = <LEFT DOWN UP RIGHT HOME END PG_UP PAGE_DOWN>;
             ignore-modifiers;
         };
 
