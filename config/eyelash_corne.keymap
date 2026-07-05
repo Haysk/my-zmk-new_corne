@@ -43,7 +43,7 @@
             #binding-cells = <1>;
             continue-list = <FR_N0 FR_N1 FR_N2 FR_N3 FR_N4 FR_N5 FR_N6 FR_N7 FR_N8 FR_N9
                              FR_PERIOD FR_COMMA FR_PLUS FR_MINUS FR_ASTERISK
-                             SPACE BACKSPACE DELETE>;
+                             BACKSPACE DELETE>;
             ignore-modifiers;
         };
 
