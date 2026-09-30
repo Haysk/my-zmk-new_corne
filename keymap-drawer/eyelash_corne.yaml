@@ -30,11 +30,11 @@ layers:
   - i
   - ':'
   - $$mdi:menu$$
+  - q
   - x
   - m
   - c
   - v
-  - q
   - $$mdi:volume-off$$
   - $$mdi:pan-down$$
   - k
