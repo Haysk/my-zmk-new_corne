@@ -110,7 +110,7 @@ layers:
   - '*'
   - '?'
   - $
-  - '&sym_grave'
+  - '`'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - '{'
@@ -138,7 +138,7 @@ layers:
   - '%'
   - '|'
   - '#'
-  - '&sym_tilde'
+  - '~'
   - \\
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
