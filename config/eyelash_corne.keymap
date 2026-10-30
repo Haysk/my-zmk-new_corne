@@ -113,30 +113,15 @@
     };
 
     macros {
-        // AZERTY dead keys followed by space -> emit the literal symbol
-        // (^, `, ~) instead of waiting to combine with the next vowel.
+        // AZERTY dead key followed by space -> emit the literal symbol
+        // (^) instead of waiting to combine with the next vowel.
+        // ` and ~ (AltGr+7 / AltGr+2) are not dead keys on Linux AZERTY.
         sym_caret: sym_caret {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <5>;
             bindings = <&kp FR_CARET &kp SPACE>;
-        };
-
-        sym_grave: sym_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings = <&kp FR_GRAVE &kp SPACE>;
-        };
-
-        sym_tilde: sym_tilde {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings = <&kp FR_TILDE &kp SPACE>;
         };
     };
 
@@ -194,9 +179,9 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &sym_caret                         &kp LG(UP)      &kp FR_DQT        &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &sym_grave          &trans
+&trans  &trans             &trans                            &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET      &sym_caret                         &kp LG(UP)      &kp FR_DQT        &kp FR_ASTERISK     &kp FR_QUESTION             &kp FR_DOLLAR           &kp FR_GRAVE        &trans
 &trans  &kp FR_LEFT_BRACE  &hml LEFT_GUI FR_LEFT_PARENTHESIS  &hml LEFT_ALT FR_RIGHT_PARENTHESIS  &hml LCTRL FR_RIGHT_BRACE  &kp FR_PLUS                &kp LG(LEFT)  &kp LG(LS(S))  &kp LG(RIGHT)  &kp FR_AMPERSAND  &hmr LCTRL FR_MINUS  &hmr LEFT_ALT FR_UNDERSCORE  &hmr LEFT_GUI FR_EQUAL  &kp FR_EXCLAMATION  &trans
-&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &sym_tilde              &kp FR_BACKSLASH    &trans
+&trans  &trans             &trans                            &kp FR_LESS_THAN                   &kp FR_GREATER_THAN       &kp FR_AT_SIGN  &kp LG(FR_V)       &kp LG(DOWN)    &kp FR_PERCENT    &kp FR_PIPE         &kp FR_HASH                 &kp FR_TILDE            &kp FR_BACKSLASH    &trans
                                                        &trans                          &trans                 &trans                                             &trans         &trans           &trans
             >;
 
