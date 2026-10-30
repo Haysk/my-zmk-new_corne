@@ -83,6 +83,19 @@
             bindings = <&kp>, <&nav_word>;
         };
 
+        // Pouce Entrée -> SYMBOL en hold-preferred : toute touche pressée
+        // pendant que le pouce est enfoncé passe sur SYMBOL, même si le pouce
+        // est relâché en premier (roll rapide pour "?" au lieu de Entrée + o).
+        lt_enter: lt_enter {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "Symbol / Enter";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
+
         // Positional home-row mods: the modifier only fires when a key on the
         // OPPOSITE hand (or a thumb) is pressed, killing same-hand misfires.
         hml: home_row_mod_left {
@@ -174,7 +187,7 @@
 &kp BACKSPACE  &kp FR_B  &kp FR_L           &kp FR_D           &kp FR_W        &kp FR_Z                                        &msc SCRL_UP                     &kp FR_SQT      &kp FR_F        &kp FR_O           &kp FR_U           &kp FR_J      &kp DEL
 &kp ESC        &kp FR_N  &hml LEFT_GUI FR_R  &hml LEFT_ALT FR_T  &hml_ctrl LCTRL FR_S  &kp FR_G                     &msc SCRL_LEFT  &kp LC(FR_L)    &msc SCRL_RIGHT  &kp FR_Y        &hmr LCTRL FR_H  &hmr LEFT_ALT FR_A  &hmr LEFT_GUI FR_E  &kp FR_I  &kp FR_COLON
 &kp K_APP      &kp FR_Q  &kp FR_X           &kp FR_M           &kp FR_C        &kp FR_V        &kp K_MUTE                   &msc SCRL_DOWN                   &kp FR_K        &kp FR_P        &kp FR_PERIOD      &kp FR_COMMA       &kp FR_SLASH  &kp FR_SEMICOLON
-                                      &lt 4 TAB       &lt 1 SPACE  &shift_nav LEFT_SHIFT 5                                                                &shift_num LEFT_SHIFT 6           &lt 2 ENTER  &mo 3
+                                      &lt 4 TAB       &lt 1 SPACE  &shift_nav LEFT_SHIFT 5                                                                &shift_num LEFT_SHIFT 6           &lt_enter 2 ENTER  &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
